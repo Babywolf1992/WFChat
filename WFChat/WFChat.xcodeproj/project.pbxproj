@@ -2080,6 +2080,7 @@
 				9E0F625D1F4438A800E1401B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E0F625E1F4438A800E1401B /* Build configuration list for PBXNativeTarget "WFChatTests" */ = {
 			isa = XCConfigurationList;
@@ -2088,6 +2089,7 @@
 				9E0F62601F4438A800E1401B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E0F62611F4438A800E1401B /* Build configuration list for PBXNativeTarget "WFChatUITests" */ = {
 			isa = XCConfigurationList;
@@ -2096,6 +2098,7 @@
 				9E0F62631F4438A800E1401B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
