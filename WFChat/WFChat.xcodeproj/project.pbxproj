@@ -10,7 +10,6 @@
 		9E0F62331F4438A800E1401B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F62321F4438A800E1401B /* main.m */; };
 		9E0F62361F4438A800E1401B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F62351F4438A800E1401B /* AppDelegate.m */; };
 		9E0F62391F4438A800E1401B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F62381F4438A800E1401B /* ViewController.m */; };
-		9E0F623C1F4438A800E1401B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F623A1F4438A800E1401B /* Main.storyboard */; };
 		9E0F623E1F4438A800E1401B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F623D1F4438A800E1401B /* Assets.xcassets */; };
 		9E0F62411F4438A800E1401B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0F623F1F4438A800E1401B /* LaunchScreen.storyboard */; };
 		9E0F624C1F4438A800E1401B /* WFChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F624B1F4438A800E1401B /* WFChatTests.m */; };
@@ -165,6 +164,7 @@
 		9E0F647F1F4438D800E1401B /* libidn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F63E91F4438D700E1401B /* libidn.a */; };
 		9E0F64851F4439BF00E1401B /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F64811F44393C00E1401B /* libxml2.tbd */; };
 		9E0F64871F443AB400E1401B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F64861F443AB400E1401B /* libresolv.tbd */; };
+		9E6CA5FF1F44466000E6AEC9 /* WFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,7 +191,6 @@
 		9E0F62351F4438A800E1401B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9E0F62371F4438A800E1401B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9E0F62381F4438A800E1401B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9E0F623B1F4438A800E1401B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E0F623D1F4438A800E1401B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E0F62401F4438A800E1401B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E0F62421F4438A800E1401B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -518,6 +517,8 @@
 		9E0F64831F44394400E1401B /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		9E0F64861F443AB400E1401B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		9E0F64891F443F7900E1401B /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		9E6CA5FD1F44466000E6AEC9 /* WFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFLoginViewController.h; sourceTree = "<group>"; };
+		9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,7 +577,8 @@
 				9E0F62351F4438A800E1401B /* AppDelegate.m */,
 				9E0F62371F4438A800E1401B /* ViewController.h */,
 				9E0F62381F4438A800E1401B /* ViewController.m */,
-				9E0F623A1F4438A800E1401B /* Main.storyboard */,
+				9E6CA5FD1F44466000E6AEC9 /* WFLoginViewController.h */,
+				9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */,
 				9E0F623D1F4438A800E1401B /* Assets.xcassets */,
 				9E0F623F1F4438A800E1401B /* LaunchScreen.storyboard */,
 				9E0F62421F4438A800E1401B /* Info.plist */,
@@ -1654,7 +1656,6 @@
 			files = (
 				9E0F62411F4438A800E1401B /* LaunchScreen.storyboard in Resources */,
 				9E0F623E1F4438A800E1401B /* Assets.xcassets in Resources */,
-				9E0F623C1F4438A800E1401B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1822,6 +1823,7 @@
 				9E0F64521F4438D800E1401B /* XMPPStreamManagementMemoryStorage.m in Sources */,
 				9E0F63FA1F4438D700E1401B /* XMPPJID.m in Sources */,
 				9E0F64011F4438D700E1401B /* XMPPCoreDataStorage.m in Sources */,
+				9E6CA5FF1F44466000E6AEC9 /* WFLoginViewController.m in Sources */,
 				9E0F64561F4438D800E1401B /* XMPPPing.m in Sources */,
 				9E0F64691F4438D800E1401B /* XMPPIDTracker.m in Sources */,
 				9E0F643F1F4438D800E1401B /* XMPPTransports.m in Sources */,
@@ -1864,14 +1866,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9E0F623A1F4438A800E1401B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9E0F623B1F4438A800E1401B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9E0F623F1F4438A800E1401B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
