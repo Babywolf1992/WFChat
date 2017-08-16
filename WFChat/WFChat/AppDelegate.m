@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "WFLoginViewController.h"
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +22,14 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    ViewController *viewController = [[ViewController alloc] init];
-    self.window.rootViewController = viewController;
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:kUsername];
+    if (username) {
+        ViewController *viewController = [[ViewController alloc] init];
+        self.window.rootViewController = viewController;
+    }else {
+        WFLoginViewController *loginViewController = [[WFLoginViewController alloc] init];
+        self.window.rootViewController = loginViewController;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }
