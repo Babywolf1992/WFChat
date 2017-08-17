@@ -7,6 +7,7 @@
 //
 
 #import "WFLoginViewController.h"
+#import "WFXMPPManager.h"
 
 @interface WFLoginViewController ()
 

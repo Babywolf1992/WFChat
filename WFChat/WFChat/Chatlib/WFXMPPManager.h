@@ -19,7 +19,7 @@ typedef NS_ENUM(NSInteger, WFConnectionStatus) {
     WFConnectionStatus_Unconnected = 2
 };
 
-@interface WFFWXMPPManager : NSObject
+@interface WFXMPPManager : NSObject
 
 @property (nonatomic, strong) XMPPStream *xmppStream;
 @property (nonatomic, assign) WFConnectionStatus connectionStatus;

@@ -165,7 +165,7 @@
 		9E0F64851F4439BF00E1401B /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F64811F44393C00E1401B /* libxml2.tbd */; };
 		9E0F64871F443AB400E1401B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F64861F443AB400E1401B /* libresolv.tbd */; };
 		9E6CA5FF1F44466000E6AEC9 /* WFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */; };
-		9EA12EAC1F45260C00956A30 /* WFFWXMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA12EAB1F45260C00956A30 /* WFFWXMPPManager.m */; };
+		9EA12EAC1F45260C00956A30 /* WFXMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA12EAB1F45260C00956A30 /* WFXMPPManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -520,8 +520,8 @@
 		9E0F64891F443F7900E1401B /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		9E6CA5FD1F44466000E6AEC9 /* WFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFLoginViewController.h; sourceTree = "<group>"; };
 		9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFLoginViewController.m; sourceTree = "<group>"; };
-		9EA12EAA1F45260C00956A30 /* WFFWXMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFFWXMPPManager.h; sourceTree = "<group>"; };
-		9EA12EAB1F45260C00956A30 /* WFFWXMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFFWXMPPManager.m; sourceTree = "<group>"; };
+		9EA12EAA1F45260C00956A30 /* WFXMPPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFXMPPManager.h; sourceTree = "<group>"; };
+		9EA12EAB1F45260C00956A30 /* WFXMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFXMPPManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1552,8 +1552,8 @@
 		9EA12EA91F4525CF00956A30 /* Chatlib */ = {
 			isa = PBXGroup;
 			children = (
-				9EA12EAA1F45260C00956A30 /* WFFWXMPPManager.h */,
-				9EA12EAB1F45260C00956A30 /* WFFWXMPPManager.m */,
+				9EA12EAA1F45260C00956A30 /* WFXMPPManager.h */,
+				9EA12EAB1F45260C00956A30 /* WFXMPPManager.m */,
 			);
 			path = Chatlib;
 			sourceTree = "<group>";
@@ -1739,7 +1739,7 @@
 				9E0F64341F4438D800E1401B /* XMPPResultSet.m in Sources */,
 				9E0F64651F4438D800E1401B /* XMPPIQ+XEP_0357.m in Sources */,
 				9E0F640D1F4438D700E1401B /* XMPPResourceMemoryStorageObject.m in Sources */,
-				9EA12EAC1F45260C00956A30 /* WFFWXMPPManager.m in Sources */,
+				9EA12EAC1F45260C00956A30 /* WFXMPPManager.m in Sources */,
 				9E0F645D1F4438D800E1401B /* XMPPMessage+XEP_0280.m in Sources */,
 				9E0F63F31F4438D700E1401B /* XMPPXOAuth2Google.m in Sources */,
 				9E0F63ED1F4438D700E1401B /* XMPPDeprecatedDigestAuthentication.m in Sources */,

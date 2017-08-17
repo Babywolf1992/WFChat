@@ -6,14 +6,14 @@
 //  Copyright © 2017年 babywolf. All rights reserved.
 //
 
-#import "WFFWXMPPManager.h"
+#import "WFXMPPManager.h"
 #import "XMPPStreamManagement.h"
 #import "XMPPAutoPing.h"
 #import "XMPPDateTimeProfiles.h"
 #import "XMPPTimer.h"
 #import "Common.h"
 
-@interface WFFWXMPPManager()
+@interface WFXMPPManager()
 
 @property (nonatomic, strong) NSString *domain;
 @property (nonatomic, strong) NSString *resource;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation WFFWXMPPManager
+@implementation WFXMPPManager
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -108,6 +108,43 @@
     }else {
         
     }
+}
+
+#pragma mark -- XMPPStreamDelegate
+- (void)xmppStreamWillConnect:(XMPPStream *)sender{
+    [self changeConnectionStatus:WFConnectionStatus_Connecting];
+}
+
+- (void)xmppstreamDidConnect:(XMPPStream *)sender {
+    [sender authenticateWithPassword:self.password error:nil];
+}
+
+- (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error {
+    [self changeConnectionStatus:WFConnectionStatus_Unconnected];
+    
+    [self.xmppTimer cancel];
+    self.xmppTimer = [[XMPPTimer alloc]initWithQueue:self.workQueue eventHandler:^{
+        if ( self.connectionStatus == WFConnectionStatus_Unconnected) {
+            [self.xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:nil];
+        }else{
+            [self.xmppTimer cancel];
+        }
+    }];
+    [self.xmppTimer startWithTimeout:1 interval:3];
+}
+
+- (void)xmppStream:(XMPPStream *)sender socketDidConnect:(GCDAsyncSocket *)socket {
+    
+}
+
+- (void)xmppStreamDidRegister:(XMPPStream *)sender{
+    NSLog(@"register");
+    NSError* error=nil;
+    [_xmppStream authenticateWithPassword:self.password error:&error];
+}
+
+-(void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
+    NSLog(@"not register");
 }
 
 @end
