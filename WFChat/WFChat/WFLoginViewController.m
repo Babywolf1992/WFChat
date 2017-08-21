@@ -58,10 +58,14 @@
     [_loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     [_loginBtn addTarget:self action:@selector(loginAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginBtn];
+    
+    _hostField.text = @"192.168.51.121";
+    _usernameField.text = @"abc";
+    _passwordField.text = @"123";
 }
 
 - (void)loginAction:(UIButton *)sender {
-    
+    [[WFXMPPManager shareInstance] connectWithUsername:_usernameField.text password:_passwordField.text host:_hostField.text];
 }
 
 - (void)didReceiveMemoryWarning {

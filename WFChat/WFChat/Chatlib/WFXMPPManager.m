@@ -33,6 +33,15 @@
 
 @implementation WFXMPPManager
 
+static WFXMPPManager *_xmppManager;
++ (instancetype)shareInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _xmppManager = [[WFXMPPManager alloc] init];
+    });
+    return _xmppManager;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         self.connectionStatus = WFConnectionStatus_Unconnected;
@@ -90,10 +99,6 @@
     [self.xmppStream setHostName:self.hostName];
     [self.xmppStream setHostPort:self.port];
     
-    if (![self.JID.domain isEqualToString:self.xmppStream.myJID.domain]) {
-        [self.xmppStream disconnectAfterSending];
-        return NO;
-    }
     NSError *error = nil;
     if (![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error]) {
         return NO;

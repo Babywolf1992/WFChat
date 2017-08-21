@@ -21,6 +21,12 @@ typedef NS_ENUM(NSInteger, WFConnectionStatus) {
 
 @interface WFXMPPManager : NSObject
 
++ (instancetype)shareInstance;
+
+-(BOOL)connectWithUsername:(NSString *)username
+                  password:(NSString *)password
+                      host:(NSString *)host;
+
 @property (nonatomic, strong) XMPPStream *xmppStream;
 @property (nonatomic, assign) WFConnectionStatus connectionStatus;
 
