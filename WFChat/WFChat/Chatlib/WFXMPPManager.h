@@ -17,10 +17,9 @@
 #import "XMPPIncomingFileTransfer.h"
 #import "XMPPOutgoingFileTransfer.h"
 
-#define JBXMPP_HOST @"192.168.51.121"
-#define JBXMPP_PORT 5222
-
-#define JBXMPP_DOMAIN @"192.168.51.121"
+#define WFXMPP_HOST @"192.168.51.121"
+#define WFXMPP_DOMAIN @"192.168.51.121"
+#define WFXMPP_PORT 5222
 
 @interface WFXMPPManager : NSObject
 

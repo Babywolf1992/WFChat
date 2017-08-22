@@ -38,8 +38,8 @@ static WFXMPPManager *_instance;
     if (!_xmppStream) {
         _xmppStream = [[XMPPStream alloc] init];
         
-        [self.xmppStream setHostName:JBXMPP_HOST];
-        [self.xmppStream setHostPort:JBXMPP_PORT];
+        [self.xmppStream setHostName:WFXMPP_HOST];
+        [self.xmppStream setHostPort:WFXMPP_PORT];
         [self.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
         [self.xmppStream setKeepAliveInterval:30];
         self.xmppStream.enableBackgroundingOnSocket=YES;
@@ -75,7 +75,7 @@ static WFXMPPManager *_instance;
 
 -(void)loginWithName:(NSString *)userName andPassword:(NSString *)password
 {
-    _myJID = [XMPPJID jidWithUser:userName domain:JBXMPP_DOMAIN resource:@"iOS"];
+    _myJID = [XMPPJID jidWithUser:userName domain:WFXMPP_DOMAIN resource:@"iOS"];
     self.myPassword = password;
     [self.xmppStream setMyJID:_myJID];
     NSError *error = nil;
@@ -95,7 +95,6 @@ static WFXMPPManager *_instance;
     [self goOffline];
     [_xmppStream disconnectAfterSending];
 }
-
 
 - (void)goOnline
 {
@@ -156,6 +155,10 @@ static WFXMPPManager *_instance;
     NSLog(@"%s",__func__);
 }
 
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(NSXMLElement *)error {
+    NSError *_error;
+    [sender registerWithPassword:self.myPassword error:&_error];
+}
 
 #pragma mark -- XMPPMessage Delegate
 
