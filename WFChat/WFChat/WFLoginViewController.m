@@ -65,7 +65,7 @@
 }
 
 - (void)loginAction:(UIButton *)sender {
-    [[WFXMPPManager shareInstance] connectWithUsername:_usernameField.text password:_passwordField.text host:_hostField.text];
+    [[WFXMPPManager sharedInstance] loginWithName:_usernameField.text andPassword:_passwordField.text];
 }
 
 - (void)didReceiveMemoryWarning {
