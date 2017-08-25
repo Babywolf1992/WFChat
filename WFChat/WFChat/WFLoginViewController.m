@@ -8,6 +8,8 @@
 
 #import "WFLoginViewController.h"
 #import "WFXMPPManager.h"
+#import "AppDelegate.h"
+#import "FriendsListViewController.h"
 
 @interface WFLoginViewController ()
 
@@ -15,6 +17,7 @@
 @property (nonatomic, strong) UITextField *passwordField;
 @property (nonatomic, strong) UITextField *hostField;
 @property (nonatomic, strong) UIButton *loginBtn;
+@property (nonatomic, strong) UIButton *registerBtn;
 
 @end
 
@@ -22,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didLogin:) name:@"DIDLogIn" object:nil];
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
@@ -49,9 +54,17 @@
     _hostField.backgroundColor = [UIColor lightGrayColor];
     _hostField.placeholder = @"服务器地址";
     _hostField.layer.cornerRadius = 5;
-    [self.view addSubview:_hostField];
+//    [self.view addSubview:_hostField];
     
-    _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-80)/2.0, CGRectGetMaxY(_hostField.frame)+30, 80, 40)];
+    _registerBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-80)/2.0-80, CGRectGetMaxY(_hostField.frame)+30, 80, 40)];
+    [_registerBtn setTitle:@"注册" forState:UIControlStateNormal];
+    [_registerBtn setTitle:@"注册" forState:UIControlStateHighlighted];
+    [_registerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_registerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    [_registerBtn addTarget:self action:@selector(registerAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_registerBtn];
+    
+    _loginBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-80)/2.0+80, CGRectGetMaxY(_hostField.frame)+30, 80, 40)];
     [_loginBtn setTitle:@"登录" forState:UIControlStateNormal];
     [_loginBtn setTitle:@"登录" forState:UIControlStateHighlighted];
     [_loginBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -65,7 +78,21 @@
 }
 
 - (void)loginAction:(UIButton *)sender {
+    [WFXMPPManager sharedInstance].isRegister = NO;
     [[WFXMPPManager sharedInstance] loginWithName:_usernameField.text andPassword:_passwordField.text];
+}
+
+- (void)registerAction:(UIButton *)sender {
+    [WFXMPPManager sharedInstance].isRegister = YES;
+    [[WFXMPPManager sharedInstance] loginWithName:_usernameField.text andPassword:_passwordField.text];
+}
+
+- (void)didLogin:(NSNotification *)sender {
+    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    FriendsListViewController *listVC = [[FriendsListViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:listVC];
+    delegate.window.rootViewController = nav;
+    [delegate.window makeKeyAndVisible];
 }
 
 - (void)didReceiveMemoryWarning {

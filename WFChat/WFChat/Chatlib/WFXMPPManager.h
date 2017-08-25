@@ -23,6 +23,8 @@
 
 @interface WFXMPPManager : NSObject
 
+@property (nonatomic, assign) BOOL isRegister;
+
 @property (nonatomic, strong) XMPPStream *xmppStream;
 
 // 模块

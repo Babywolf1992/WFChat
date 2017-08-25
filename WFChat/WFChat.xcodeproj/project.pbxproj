@@ -166,6 +166,7 @@
 		9E0F64871F443AB400E1401B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0F64861F443AB400E1401B /* libresolv.tbd */; };
 		9E3222D91F4BCD6500DC8FF7 /* WFXMPPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3222D81F4BCD6500DC8FF7 /* WFXMPPManager.m */; };
 		9E6CA5FF1F44466000E6AEC9 /* WFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */; };
+		9EA75F0E1F4FBF5900CE90EC /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EA75F0D1F4FBF5900CE90EC /* FriendsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -522,6 +523,8 @@
 		9E3222D81F4BCD6500DC8FF7 /* WFXMPPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFXMPPManager.m; sourceTree = "<group>"; };
 		9E6CA5FD1F44466000E6AEC9 /* WFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFLoginViewController.h; sourceTree = "<group>"; };
 		9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFLoginViewController.m; sourceTree = "<group>"; };
+		9EA75F0C1F4FBF5900CE90EC /* FriendsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsListViewController.h; sourceTree = "<group>"; };
+		9EA75F0D1F4FBF5900CE90EC /* FriendsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,6 +586,8 @@
 				9E0F62381F4438A800E1401B /* ViewController.m */,
 				9E6CA5FD1F44466000E6AEC9 /* WFLoginViewController.h */,
 				9E6CA5FE1F44466000E6AEC9 /* WFLoginViewController.m */,
+				9EA75F0C1F4FBF5900CE90EC /* FriendsListViewController.h */,
+				9EA75F0D1F4FBF5900CE90EC /* FriendsListViewController.m */,
 				9E0F623D1F4438A800E1401B /* Assets.xcassets */,
 				9E0F623F1F4438A800E1401B /* LaunchScreen.storyboard */,
 				9E0F62421F4438A800E1401B /* Info.plist */,
@@ -1795,6 +1800,7 @@
 				9E0F64421F4438D800E1401B /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				9E0F64721F4438D800E1401B /* DDASLLogCapture.m in Sources */,
 				9E0F63FD1F4438D700E1401B /* XMPPParser.m in Sources */,
+				9EA75F0E1F4FBF5900CE90EC /* FriendsListViewController.m in Sources */,
 				9E0F64221F4438D700E1401B /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				9E0F64191F4438D700E1401B /* XMPPRoomCoreDataStorage.m in Sources */,
 				9E0F643B1F4438D800E1401B /* NSDate+XMPPDateTimeProfiles.m in Sources */,

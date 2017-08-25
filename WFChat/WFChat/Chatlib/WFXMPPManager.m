@@ -26,6 +26,7 @@ static WFXMPPManager *_instance;
 {
     self = [super init];
     if (self) {
+        _isRegister = NO;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate) name:UIApplicationWillTerminateNotification object:nil];
     }
     return self;
@@ -127,10 +128,17 @@ static WFXMPPManager *_instance;
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
     NSError *error = nil;
-    if (![[self xmppStream] authenticateWithPassword:_myPassword error:&error])
-    {
-        NSLog(@"Error authenticating: %@", error);
+    if (_isRegister) {
+        if (![[self xmppStream] registerWithPassword:_myPassword error:&error]) {
+            NSLog(@"Error register: %@", error);
+        }
+    }else {
+        if (![[self xmppStream] authenticateWithPassword:_myPassword error:&error])
+        {
+            NSLog(@"Error authenticating: %@", error);
+        }
     }
+    _isRegister = NO;
 }
 
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
@@ -153,6 +161,13 @@ static WFXMPPManager *_instance;
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(NSXMLElement *)error
 {
     NSLog(@"%s",__func__);
+    NSLog(@"error:%@",error);
+}
+
+-(void)xmppStreamDidRegister:(XMPPStream *)sender{
+    NSLog(@"register");
+    NSError* error=nil;
+    [_xmppStream authenticateWithPassword:_myPassword error:&error];
 }
 
 - (void)xmppStream:(XMPPStream *)sender didNotRegister:(NSXMLElement *)error {
